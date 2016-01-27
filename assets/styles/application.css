@@ -10,7 +10,7 @@ body{
 	padding:10px;
 }
 .form-control{
-	width: inherit;
+	/*width: inherit;*/
 }
 .chat_message{
 	padding: 10px;
@@ -39,4 +39,8 @@ body{
 .col-lg-4,.col-lg-6{
 	padding-right: 3px;
 	padding-left: 3px;
+}
+
+#message-input {
+	width: inherit;
 }
