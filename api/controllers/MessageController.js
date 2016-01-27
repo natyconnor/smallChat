@@ -15,8 +15,14 @@ module.exports = {
 			// This is the message from connected client
 			// So add new conversation
 			Message.create(data_from_client).exec(function (error, data_from_client) {
-				 console.log(data_from_client);
-				 Message.publishCreate({id: data_from_client.id, content: data_from_client.content, user: data_from_client.user});
+
+				if(error) {
+					console.log(error);
+					return res.negotiate(err);
+				} else {
+					console.log(data_from_client);
+					Message.publishCreate({id: data_from_client.id, content: data_from_client.content, user: data_from_client.user});
+				}
 			})
 
 		}
